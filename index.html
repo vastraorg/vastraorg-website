@@ -73,14 +73,9 @@
     display: flex; align-items: center; justify-content: center;
     overflow: hidden; position: relative;
   }
-  .hero-img-placeholder {
-    width: 100%; height: 100%; min-height: 500px;
-    background: linear-gradient(135deg, #e8e4de 0%, #d4cfc7 50%, #c9c3ba 100%);
-    display: flex; flex-direction: column; align-items: center; justify-content: center;
-    gap: 1rem;
+  .hero-img img {
+    width: 100%; height: 100%; object-fit: cover; min-height: 500px;
   }
-  .silhouette { font-size: 7rem; opacity: 0.3; }
-  .img-label { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); }
 
   /* MARQUEE */
   .marquee-wrap { background: var(--black); padding: 0.9rem 0; overflow: hidden; }
@@ -103,18 +98,16 @@
     display: flex; align-items: center; justify-content: center;
     margin-bottom: 1rem; overflow: hidden; position: relative;
   }
-  .product-img-inner {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3.5rem; opacity: 0.25;
+  .product-img img {
+    width: 100%; height: 100%; object-fit: cover;
     transition: transform 0.4s ease;
   }
-  .product-card:hover .product-img-inner { transform: scale(1.05); }
+  .product-card:hover .product-img img { transform: scale(1.05); }
   .product-tag-overlay {
     position: absolute; top: 12px; left: 12px;
     background: var(--black); color: var(--white);
     font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
-    padding: 4px 10px; font-weight: 500;
+    padding: 4px 10px; font-weight: 500; z-index: 1;
   }
   .product-name { font-size: 0.88rem; font-weight: 500; margin-bottom: 0.3rem; }
   .product-price { font-size: 0.85rem; color: var(--muted); }
@@ -180,11 +173,12 @@
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .footer-col a { font-size: 0.82rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
   .footer-col a:hover { color: var(--white); }
-  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .footer-bottom span { font-size: 0.78rem; }
-  .social-links { display: flex; gap: 1.2rem; }
+  .social-links { display: flex; gap: 1.2rem; align-items: center; }
   .social-links a { font-size: 0.78rem; color: rgba(255,255,255,0.45); text-decoration: none; transition: color 0.2s; }
   .social-links a:hover { color: var(--white); }
+  .social-links p { font-size: 0.78rem; color: rgba(255,255,255,0.45); }
 
   /* ANIMATIONS */
   @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
@@ -241,11 +235,7 @@
     </div>
   </div>
   <div class="hero-img">
-    <div class="hero-img-placeholder">
-      <!-- REPLACE THIS WITH YOUR IMAGE: <img src="your-photo.jpg" style="width:100%;height:100%;object-fit:cover;" /> -->
-      <div class="silhouette">&#128107;</div>
-      <p class="img-label">Add your hero image here</p>
-    </div>
+    <img src="images/Untitled design_20260422_204550_0000~2.png" alt="VASTRA Hero" />
   </div>
 </section>
 
@@ -253,12 +243,12 @@
 <div class="marquee-wrap">
   <div class="marquee-inner">
     <span>Free shipping over ₹2,000</span><span class="marquee-dot">✦</span>
-    <span>New arrivals every Friday</span><span class="marquee-dot">✦</span>
-    <span>Easy 30-day returns</span><span class="marquee-dot">✦</span>
+    <span>New arrivals every month 21st</span><span class="marquee-dot">✦</span>
+    <span>Customized orders also</span><span class="marquee-dot">✦</span>
     <span>Sustainably sourced fabrics</span><span class="marquee-dot">✦</span>
     <span>Free shipping over ₹2,000</span><span class="marquee-dot">✦</span>
-    <span>New arrivals every Friday</span><span class="marquee-dot">✦</span>
-    <span>Easy 30-day returns</span><span class="marquee-dot">✦</span>
+    <span>New arrivals every month 21st</span><span class="marquee-dot">✦</span>
+    <span>Customized orders also</span><span class="marquee-dot">✦</span>
     <span>Sustainably sourced fabrics</span><span class="marquee-dot">✦</span>
   </div>
 </div>
@@ -272,35 +262,19 @@
   <div class="collection-grid">
     <div class="product-card">
       <div class="product-img">
-        <div class="product-tag-overlay">New</div>
-        <!-- REPLACE WITH: <img src="product1.jpg" style="width:100%;height:100%;object-fit:cover;" /> -->
-        <div class="product-img-inner">&#128085;</div>
-      </div>
-      <p class="product-name">Linen Relaxed Shirt</p>
-      <p class="product-price">₹2,499</p>
-    </div>
-    <div class="product-card">
-      <div class="product-img">
         <div class="product-tag-overlay">Bestseller</div>
-        <div class="product-img-inner">&#128086;</div>
+        <img src="images/1a153ef6-2c53-4bd2-bc9a-17b876b9e0f8~2.png" alt="Men's T-Shirt" />
       </div>
-      <p class="product-name">High Waist Trousers</p>
-      <p class="product-price"><span class="original">₹3,200</span><span class="sale">₹2,199</span></p>
-    </div>
-    <div class="product-card">
-      <div class="product-img">
-        <div class="product-img-inner">&#128087;</div>
-      </div>
-      <p class="product-name">Midi Wrap Dress</p>
-      <p class="product-price">₹3,799</p>
+      <p class="product-name">Men's T-Shirt</p>
+      <p class="product-price">₹699</p>
     </div>
     <div class="product-card">
       <div class="product-img">
         <div class="product-tag-overlay">New</div>
-        <div class="product-img-inner">&#129345;</div>
+        <img src="images/8fb345b2-58c3-4c27-afa8-196ae05285ca~2.png" alt="Women's T-Shirt" />
       </div>
-      <p class="product-name">Oversized Blazer</p>
-      <p class="product-price">₹5,499</p>
+      <p class="product-name">Women's T-Shirt</p>
+      <p class="product-price">₹699</p>
     </div>
   </div>
 </section>
@@ -311,50 +285,10 @@
     <p class="banner-tag">Limited Edition</p>
     <h2 class="banner-title">The Summer<br>Edit is Here</h2>
     <p class="banner-sub">Lightweight fabrics, bold silhouettes. Designed for warm days and warm nights.</p>
-    <a href="#" class="btn-gold">Explore the Edit</a>
+    <a href="#collections" class="btn-gold">Explore the Edit</a>
   </div>
   <div class="banner-img">&#127774;</div>
 </div>
-
-<!-- MORE PRODUCTS -->
-<section id="new">
-  <div class="section-header">
-    <h2 class="section-title">Trending Now</h2>
-    <a href="#" class="section-link">View all</a>
-  </div>
-  <div class="collection-grid">
-    <div class="product-card">
-      <div class="product-img">
-        <div class="product-img-inner">&#128088;</div>
-      </div>
-      <p class="product-name">Knit Co-ord Set</p>
-      <p class="product-price">₹4,299</p>
-    </div>
-    <div class="product-card">
-      <div class="product-img">
-        <div class="product-tag-overlay">Sale</div>
-        <div class="product-img-inner">&#128085;</div>
-      </div>
-      <p class="product-name">Floral Maxi Skirt</p>
-      <p class="product-price"><span class="original">₹2,800</span><span class="sale">₹1,699</span></p>
-    </div>
-    <div class="product-card">
-      <div class="product-img">
-        <div class="product-img-inner">&#128086;</div>
-      </div>
-      <p class="product-name">Wide Leg Jeans</p>
-      <p class="product-price">₹3,199</p>
-    </div>
-    <div class="product-card">
-      <div class="product-img">
-        <div class="product-tag-overlay">Bestseller</div>
-        <div class="product-img-inner">&#129345;</div>
-      </div>
-      <p class="product-name">Cropped Jacket</p>
-      <p class="product-price">₹4,799</p>
-    </div>
-  </div>
-</section>
 
 <!-- NEWSLETTER -->
 <section class="newsletter">
@@ -378,10 +312,9 @@
       <ul>
         <li><a href="#">Women</a></li>
         <li><a href="#">Men</a></li>
-        <li><a href="#">Accessories</a></li>
         <li><a href="#">Sale</a></li>
       </ul>
-    </div>985623
+    </div>
     <div class="footer-col">
       <h4>Help</h4>
       <ul>
@@ -396,17 +329,16 @@
       <ul>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Sustainability</a></li>
-        <li><a href="#">Careers</a></li>
-        <li><a href="#">Press</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
     <span>© 2025 VASTRA. All rights reserved.</span>
     <div class="social-links">
-      <a href="#">Instagram</a>
-      <a href="#">Pinterest</a>
-      <a href="#">WhatsApp</a>
+      <a href="https://www.instagram.com/vastrafusion.clothing?igsh=eHN4MWxsYWV1emJ3" target="_blank">Instagram</a>
+      <a href="mailto:johanthmaniadapa@gmail.com">Email</a>
+      <a href="https://wa.me/919912343599" target="_blank">WhatsApp</a>
+      <p>+91 9912343599</p>
     </div>
   </div>
 </footer>
